@@ -5,32 +5,40 @@ require "json"
 require "rest_client"
 
 module StackOverlord
+
   at_exit do
-    @stack_master = Overlord.new($!) if $!
-    if @stack_master stack_master.run
+    Overlord.make_overlord if $!
   end
 
-  class Overlord
-    attr_reader :error
+end
 
-    def initialize(collected_error)
-      @mash = Mac.addr.encrypt
-      @error = {message: collected_error.message, error_class: collected_error.class}
-    end
+class Overlord
+  attr_reader :error
 
+  def initialize(collected_error)
+    @error = {message: collected_error.message, error_class: collected_error.class}
+  end
 
-    def post_message
-      error = @error.to_json
-      RestClient.post "http://localhost:3000/addresses/#{@mash}/gawks", error, :content_type => :json, :accept => :json
-    end
+  def self.make_overlord
+    @stack_master = Overlord.new($!)
+    @stack_master.run
+  end
 
-    def puts_link
-      puts "\e[31m Your Overlord resides here: http://localhost:3000/#{@mash} \e[0m"
-    end
+  def mash
+    Mac.addr.encrypt
+  end
 
-    def run
-      self.post_message
-      self.puts_link
-    end
+  def post_message
+    RestClient.post "http://localhost:3000/addresses/#{mash}/gawks", @error.to_json, :content_type => :json, :accept => :json
+  end
+
+  def puts_link
+    puts "\e[31m Your Overlord resides here: http://localhost:3000/#{mash} \e[0m"
+  end
+
+  def run
+    self.post_message
+    self.puts_link
   end
 end
+
