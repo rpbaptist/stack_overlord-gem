@@ -5,21 +5,16 @@ require "encrypted_strings"
 require "json"
 require "rest_client"
 
-# describe Stackoverlord  do
-#   subject {Stackoverlord.new}
 
-#   describe '#method' do
-#     let(:sample_error) {1/0}
+describe Overlord do
 
-#   it 'collects errors' do
-#     expect(sample_error).to be_an(Exception)
-#     end
-#   end
+let!(:test_lord) {Overlord.new(NoMethodError.new)}
 
-# end
- describe Overlord do
+    describe '#self.make_overlord' do
+      it 'should make a new Overlord then run that overlord. This method is called by module StackOverLord at exit if $! is present.' do
+      end
+    end
 
-  let!(:test_lord) {Overlord.new(NoMethodError.new)}
 
   describe '#initialize' do
     it 'sets attr_reader @error to a hash with keys message and error_class and values from the error' do

@@ -5,12 +5,11 @@ require "json"
 require "rest_client"
 
 module StackOverlord
+
   at_exit do
-    @stack_master = Overlord.new($!) if $!
-    if @stack_master
-      @stack_master.run
-    end
+    Overlord.make_overlord if $!
   end
+
 end
 
 class Overlord
@@ -18,6 +17,11 @@ class Overlord
 
   def initialize(collected_error)
     @error = {message: collected_error.message, error_class: collected_error.class}
+  end
+
+  def self.make_overlord
+    @stack_master = Overlord.new($!)
+    @stack_master.run
   end
 
   def mash
