@@ -1,10 +1,13 @@
 require "stack_overlord/version"
-# require "macaddr"
+require "macaddr"
+require "encrypted_strings"
+require "json"
+require "rest_client"
 
 module StackOverlord
   at_exit do
-    stack_master = Overlord.new($!) if $!
-    stack_master.run
+    @stack_master = Overlord.new($!) if $!
+    if @stack_master stack_master.run
   end
 
   class Overlord
