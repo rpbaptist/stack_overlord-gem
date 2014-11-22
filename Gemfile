@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
+gemspec
+gem 'bundler'
+gem 'rake'
 gem 'json'
 gem 'rest_client'
 gem 'macaddr'
 gem 'encrypted_strings'
-# Specify your gem's dependencies in stack_overlord.gemspec
-gemspec
