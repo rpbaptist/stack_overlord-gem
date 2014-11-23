@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "stack_overlord"
   spec.version       = StackOverlord::VERSION
   spec.authors       = ["Michael Karouzos & Peter Soderberg & Nick Brown & Richard Baptist"]
-  spec.email         = ["pair+multiviouskalogram.psoderberg@devbootcamp.com"]
+  spec.email         = ["StackOverlord@gmail.com"]
   spec.summary       = %q{Enlist an overlord to handle error messages}
-  spec.description   = %q{This will eventually be a longer description.}
-  spec.homepage      = ""
+  spec.description   = %q{Provides links to relevant StackOverflow and Ruby-doc pages.}
+  spec.homepage      = "http://stackoverlord.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

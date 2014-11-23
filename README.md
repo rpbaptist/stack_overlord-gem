@@ -1,6 +1,6 @@
 # StackOverlord
 
-TODO: Write a gem description
+This gem listens for exceptions raised by a ruby file and provides links to the the most relevent answers on StackOverflow as well as the Ruby-docs.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require this gem in the ruby program you're writing. When an error is generated, a link will be displayed in the terminal window. It's easiest to launch the page by holding command and double-clicking the url in the terminal. Subsequent exceptions raised will update the page with new links.
 
 ## Contributing
 
