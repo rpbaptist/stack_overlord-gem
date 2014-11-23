@@ -29,11 +29,11 @@ class Overlord
   end
 
   def post_message
-    RestClient.post "http://localhost:3000/addresses/#{mash}/gawks", @error.to_json, :content_type => :json, :accept => :json
+    RestClient.post "http://www.stackoverlord.com/#{mash}", @error.to_json, :content_type => :json, :accept => :json
   end
 
   def puts_link
-    puts "\e[31m Your Overlord resides here: http://localhost:3000/#{mash} \e[0m"
+    puts "\e[31m Your Overlord resides here: http://www.stackoverlord.com/#{mash} \e[0m"
   end
 
   def run
