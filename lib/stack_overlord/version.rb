@@ -1,3 +1,3 @@
 module StackOverlord
-  VERSION = "0.0.9"
+  VERSION = "0.0.92"
 end

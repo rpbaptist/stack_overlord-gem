@@ -9,9 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Michael Karouzos & Peter Soderberg & Nick Brown & Richard Baptist"]
   spec.email         = ["StackOverlord@gmail.com"]
   spec.summary       = %q{Enlist an overlord to handle error messages}
-  spec.description   = %q{Provides links to relevant StackOverflow and Ruby-doc pages.}
-  spec.homepage      = "http://stackoverlord.com"
+  spec.description   = %q{This gem listens for exceptions raised by Ruby and provides links to the the most relevent answers on StackOverflow and Ruby-docs.}
+  spec.homepage      = "http://www.stackoverlord.com"
   spec.license       = "MIT"
+  spec.platform      = Gem::Platform::RUBY
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

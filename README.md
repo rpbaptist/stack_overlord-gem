@@ -19,7 +19,7 @@ Or install it yourself as:
     $ gem install stack_overlord
 
 ## Usage
-
+Bear in mind that this is very much a work in progress.  Currently, it only supports exceptions in plain ruby.  We hope to add Rails functionality.
 Require this gem in the ruby program you're writing. When an error is generated, a link will be displayed in the terminal window. It's easiest to launch the page by holding command and double-clicking the url in the terminal. Subsequent exceptions raised will update the page with new links.
 
 ## Contributing
