@@ -1,6 +1,6 @@
 # StackOverlord
 
-This gem listens for exceptions raised by a ruby file and provides links to the the most relevent answers on StackOverflow as well as the Ruby-docs.
+This gem listens for exceptions raised by a ruby file and provides links to the the most relevant answers on StackOverflow as well as the Ruby-docs.
 
 ## Installation
 
